@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body dir="rtl" style="display: flex; justify-content: center; align-items: center; height: 1000px">
+
+  <div class="container" style="background-color: rgb(249, 249, 249);">
+    <div style="display: flex; justify-content: center; padding-bottom: 20px;">
+      <h3>من الميلادي الى الهجري</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-4" style="display: flex;">
+        
+        <label for="floatingInput" class="pb-2 pt-2">اليوم</label>
+        <input [(ngModel)]="day" type="text" class="form-control mb-3  mr-1" id="inputday" value="{{day}}">
+      </div>
+      <div class="col-md-4" style="display: flex;">
+        <label for="floatingInput" class="pb-2 pt-2">الشهر</label>
+        <select [(ngModel)]="month" class="form-control mb-3  mr-1" name="month" id="month" [value]="month" >
+          <option value="1">(1) يناير</option>
+          <option value="2">(2) فبراير</option>
+          <option value="3">(3) مارس</option>
+          <option value="4">(4) أبريل</option>
+          <option value="5">(5) مايو</option>
+          <option value="6">(6) يونيو</option>
+          <option value="7">(7) يوليو</option>
+          <option value="8">(8) أغسطس</option>
+          <option value="9">(9) سبتمبر</option>
+          <option value="10">(10) أكتوبر</option>
+          <option value="11">(11) نوفمبر</option>
+          <option value="12">(12) ديسمبر</option>
+          
+        </select>
+      </div>
+      <div class="col-md-4" style="display: flex;">
+        <label for="floatingInput" class="pb-2 pt-2">السنة</label>
+        <input [(ngModel)]="year" type="text" class="form-control mb-3  mr-1" id="year" value="{{year}}">
+      </div>
+    </div>
+    <!-- السطر الثاني -->
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center align-items-center">
+        <div class="p-3 mb-2">
+          <button type="button" class="btn btn-success pl-3 pr-3" (click)="ConvertToHijri()">تحويل</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- السطر الثالث -->
+    <div class="row">
+      <table class="table table-bordered text-center">
+        <tbody>
+          <tr>
+            <td>التاريخ الهجري</td>
+            <td>{{FullDateHijri | convertToHijriDate:'y'}}</td>
+          </tr>
+          <tr>
+            <td>اليوم</td>
+            <td>{{FullDateHijri | convertToHijriDate:'d'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- السطر الثالث -->
+
+  </div>
+
+</body>
+
+</html>
